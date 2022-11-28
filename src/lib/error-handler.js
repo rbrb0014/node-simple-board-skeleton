@@ -6,7 +6,7 @@ const errorHandler = (err, req, res, next) => {
             return res.send(getAlertScript('Invalid parameters!'));
         case 'UNAUTHORIZED':
             return res.send(getAlertScript('Login failure!'));
-        case 'NOT_FOUND':
+        case 'NOT_EXIST':
             return res.render('error.pug', {
                 errorCode: 404,
                 errorMsg: 'Not Found',
