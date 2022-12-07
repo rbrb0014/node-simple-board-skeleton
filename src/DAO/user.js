@@ -3,7 +3,8 @@ const { runQuery } = require("../lib/database");
 const getByUsername = async (username) => {
     const sql = 'select id, password, display_name as displayName, is_active as isActive, is_staff as isStaff from users where username = ?';
     const results = await runQuery(sql, [username]);
-    return results;
+    console.dir(results);
+    return results[0];
 }
 
 //회원 가입
